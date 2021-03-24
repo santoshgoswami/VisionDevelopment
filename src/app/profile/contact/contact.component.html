@@ -1,0 +1,107 @@
+<div class="section" id="contact">
+        <div class="cc-contact-information" style="background-image: url('assets/images/contact.jpg');">
+          <div class="container">
+            <div class="cc-contact">
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="card mb-0" data-aos="zoom-in">
+                    <div class="h4 text-center title">Contact Me</div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <form (ngSubmit)="f.form.valid && onSubmitForm(f)" #f="ngForm" novalidate>
+                            <div class="p pb-3">
+                              <strong>Feel free to contact me </strong>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col">
+                                <div class="input-group">
+                                  <span class="input-group-addon">
+                                    <i class="fa fa-user-circle"></i>
+                                  </span>
+                                  <input class="form-control" type="text" name="contactName" placeholder="Full Name"
+                                    [(ngModel)]="model.contactName" #contactName="ngModel" maxlength="50"
+                                    [ngClass]="{ 'is-invalid': f.submitted && contactName.invalid }" required />
+                                </div>
+                                <span *ngIf="contactName.invalid && (contactName.dirty || contactName.touched)" class="alert alert-danger1">
+                                  <span *ngIf="contactName.errors.required">
+                                    Name is required.
+                                  </span>                                  
+                                </span>
+                              </div>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col">
+                                <div class="input-group">
+                                  <span class="input-group-addon">
+                                    <i class="fa fa-file-text"></i>
+                                  </span>
+                                  <input class="form-control" type="text" name="contactSubject" placeholder="Subject"
+                                    [(ngModel)]="model.contactSubject" #contactSubject="ngModel" maxlength="100"
+                                    [ngClass]="{ 'is-invalid': f.submitted && contactSubject.invalid }" required />
+                                </div>
+                                <span *ngIf="contactSubject.invalid && (contactSubject.dirty || contactSubject.touched)" class="alert alert-danger1">
+                                  <span *ngIf="contactSubject.errors.required">
+                                    Subject is required.
+                                  </span>                                  
+                                </span>
+                              </div>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col">
+                                <div class="input-group">
+                                  <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                  </span>
+                                  <input class="form-control" type="text" name="contactEmail" placeholder="E-mail"
+                                    [(ngModel)]="model.contactEmail" #contactEmail="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && contactEmail.invalid }"
+                                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
+                                </div>
+                                <span *ngIf="contactEmail.invalid && (contactEmail.dirty || contactEmail.touched)" class="alert alert-danger1">
+                                  <span *ngIf="contactEmail.errors.required">
+                                    Email is required.
+                                  </span>
+                                  <span *ngIf="contactEmail.errors.email">
+                                    Email must be a valid email address.
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col">
+                                <div class="form-group">
+                                  <textarea class="form-control" name="contactMessage" placeholder="Your Message"
+                                    [(ngModel)]="model.contactMessage" #message="ngModel"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <button class="btn btn-primary" type="submit">Send</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <p class="mb-0">
+                            <strong>Phone</strong>
+                          </p>
+                          <p class="pb-2">+91 0000000000</p>
+                          <p class="mb-0">
+                            <strong>Email</strong>
+                          </p>
+                          <p>info@visiondevelopment.com</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-snotify class="material"></ng-snotify>
