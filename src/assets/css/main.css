@@ -181,6 +181,10 @@ fieldset[disabled]
   font-size: 1.325rem;
 }
 
+.fa-size{
+  font-size: 2.325rem !important;
+}
+
 .btn.btn-icon:not(.btn-footer) i.now-ui-icons,
 .btn.btn-icon:not(.btn-footer) i.fa,
 .navbar .navbar-nav > a.btn.btn-icon:not(.btn-footer) i.now-ui-icons,
@@ -4975,7 +4979,7 @@ img {
 }
 
 .cc-services .cc-services-header {
-  padding-top: 60px;
+  padding-top: 40px;
   padding-right: 0;
   text-align: center;
   color: #fff;
